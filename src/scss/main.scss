@@ -1,0 +1,71 @@
+@import './_variables';
+@import './mixin';
+
+html {
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
+}
+
+body {
+    background-color: #fcf7ff;
+}
+
+.container {
+    max-width: 1320px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    background-color: $color-secondary;
+    color: $color-white;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    // border-radius: 5px;
+    border-width: 1px;
+    border-color: transparent;
+    outline: 0;
+    padding: 16px 28px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:not(.btn-link) {
+        &:hover {
+            background-color: darken($color-secondary, 5%);
+            text-decoration: none;
+        }
+
+        &:focus {
+            background-color: lighten($color-secondary, 5%);
+        }
+
+        &.disabled {
+            background-color: darken($color-secondary, 10%);
+            color: $color-white;
+        }
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.65;
+    }
+
+    svg {
+        fill: currentColor;
+    }
+}

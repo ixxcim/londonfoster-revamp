@@ -1,0 +1,170 @@
+<div class="relative">
+    <header class="header-fixed">
+        <div class="container flex items-center h-full">
+            <a href="/" class="header-navbrand">London Foster</a>
+            <nav class="header-navbar">
+                <ul class="flex items-center">
+                    <li class="header-navbar-item">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="header-navbar-item">
+                        <a href="/">Our listings</a>
+                    </li>
+                    <li class="header-navbar-item">
+                        <a href="/">Agents</a>
+                    </li>
+                    <li class="header-navbar-item">
+                        <a href="/">Blog</a>
+                    </li>
+                </ul>
+                <div class="ml-auto">
+                    <a href="/" class="mr-6">Sign In</a>
+                    <button type="button" class="btn btn-primary">Contact us</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="hero-banner" style="background-image: linear-gradient(rgba(12, 60, 96,0.55), rgba(12, 60, 96,0.55)),url('https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"></div>
+        <div class="container mt-auto">
+            <div class="mb-20">
+                <h1 class="hero-title">Empowering Your Real <br /> Estate Experience</h1>
+                <p class="hero-description">London foster is the fastest growing, innovative real estate office in <br /> south florida.</p>
+                <button type="button" class="btn btn-primary cta">Get Started</button>
+            </div>
+            <ul class="flex mb-20">
+                <li class="achievement">
+                    <span class="achievement-title">17 902 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    <span class="achievement-description">Transaction</span>
+                </li>
+                <li class="achievement">
+                    <span class="achievement-title">15 366 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    <span class="achievement-description">Satisfied Customer</span>
+                </li>
+                <li class="achievement">
+                    <span class="achievement-title">685 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    <span class="achievement-description">Agents</span>
+                </li>
+                <li class="achievement">
+                    <span class="achievement-title">17 982 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    <span class="achievement-description">Satisfied Customer</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    @import '../scss/_variables';
+
+    .header-fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        z-index: 1000;
+        color: $color-white;
+    }
+
+    .header-navbrand {
+        margin-right: 90px;
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 700;
+    }
+
+    .header-navbar {
+        flex: 1;
+        display: flex;
+
+        &,
+        .btn {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+        }
+
+        &-item {
+            &:not(:last-child) {
+                margin-right: 62px;
+            }
+        }
+    }
+
+    .hero {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 860px;
+
+        color: $color-white;
+
+        .cta {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        &-banner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        &-title {
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 98px;
+            margin-bottom: 24px;
+        }
+
+        &-description {
+            font-size: 20px;
+            line-height: 32px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .achievement {
+        letter-spacing: 0.03em;
+
+        &:not(:last-child) {
+            margin-right: 80px;
+        }
+
+        &-title {
+            display: block;
+            font-size: 34px;
+            line-height: 40px;
+            margin-bottom: 10px;
+
+            svg {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 8px;
+            }
+        }
+
+        &-description {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+</style>

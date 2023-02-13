@@ -1,0 +1,37 @@
+@mixin breakpoint-min($breakpoint) {
+    @if $breakpoint { // From top (SMALL) to bottom (LARGE)
+        @media only screen and (min-width: $breakpoint) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin breakpoint-max($breakpoint, $default: true) {
+  @if $breakpoint { // From bottom (small) to small (large)
+    // base font of em is 16px
+    // max-width - 0.02px
+        @if $default {
+            @media only screen and (max-width: ($breakpoint - 1)) {
+                @content;
+            }
+        } @else {
+            @media only screen and (max-width: $breakpoint) {
+                @content;
+            }
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin breakpoint-between($min, $max) {
+    @if $min and $max {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
