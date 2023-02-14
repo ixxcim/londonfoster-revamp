@@ -1,0 +1,51 @@
+---
+export interface Props {
+    title: string;
+    subtitle: string;
+    description: string;
+}
+
+const { title, subtitle, description } = Astro.props;
+---
+
+<section class="py-24">
+    <div class="container">
+        <div class="text-center mb-16">
+            <span class="section-subtitle uppercase mb-3">{subtitle}</span>
+            <h1 class="section-title mb-8">{title}</h1>
+            <p class="section-description">{description}</p>
+        </div>
+        <slot />
+    </div>
+</section>
+
+<style lang="scss">
+    @import '../scss/_variables';
+
+    .section-subtitle {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.4em;
+        color: #a1acbd;
+    }
+
+    .section-title {
+        font-family: $font-family-secondary;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 52px;
+        color: #062033;
+    }
+
+    .section-description {
+        font-size: 22px;
+        line-height: 28px;
+        max-width: 700px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        // color: #6d7888;
+        color: #3d4856;
+    }
+</style>

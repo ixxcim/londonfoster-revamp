@@ -58,7 +58,7 @@
     @import '../scss/_variables';
 
     .header-fixed {
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
@@ -79,6 +79,7 @@
     .header-navbar {
         flex: 1;
         display: flex;
+        font-weight: 500;
 
         &,
         .btn {
@@ -128,6 +129,7 @@
         }
 
         &-title {
+            font-family: $font-family-secondary;
             font-weight: 700;
             font-size: 72px;
             line-height: 98px;
@@ -135,6 +137,7 @@
         }
 
         &-description {
+            font-family: $font-family-secondary;
             font-size: 20px;
             line-height: 32px;
             margin-bottom: 40px;
@@ -158,6 +161,7 @@
                 display: inline-block;
                 vertical-align: top;
                 margin-top: 8px;
+                color: $color-secondary;
             }
         }
 
