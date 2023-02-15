@@ -1,12 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
+import ParallaxImage from '../components/ParallaxImage.jsx';
+
+const sectionPartners = {
+    title: 'Our Partnership',
+    subtitle: 'Partnership',
+    description: 'London Foster is an active member of over 20 Real Estate Associations throughtout florida.',
+};
+
+const sectionAbout = {
+    title: 'We provide Buy and Sell Property with trusted agents',
+    subtitle: 'Who we are',
+    description: 'We specialize on first-time home buyers and investment opportunities at London Foster, a real estate marketplace that aims to help homeowners, home buyers, sellers, renters, and agents in finding and sharing real-estate-related information.',
+};
+
+const sectionPopular = {
+    title: 'Our Agents',
+    subtitle: 'Popular',
+    description: 'London Foster agents are icons, experts, and industry rock stars excited to share their experience, wisdom, and trusted tools with you.',
+};
 ---
 
 <Layout title="Home">
     <main>
-        <Section title="Our Partnership" subtitle="Partnership" description="London Foster is an active member of over 20 Real Estate Associations throughtout florida.">
-            <div class="flex items-center justify-between">
+        <Section hasImage={false} title={sectionPartners.title} subtitle={sectionPartners.subtitle} description={sectionPartners.description}>
+            <div class="partners flex items-center justify-between mb-20">
                 <img src="https://londonfoster.com/wp-content/uploads/2017/03/logo200h-175x50-c-center.png" alt="" />
                 <img src="https://londonfoster.com/wp-content/uploads/2017/03/rasm_logo-175x50-c-center.jpg" alt="" />
                 <img src="https://londonfoster.com/wp-content/uploads/2017/03/realtors-association-logo-lo-res-7-09-rgb-175x50-c-center.jpg" alt="" />
@@ -15,5 +34,16 @@ import Section from '../components/Section.astro';
                 <img src="https://londonfoster.com/wp-content/uploads/2016/04/28e938cf-b00e-4178-9821-b7f8ee6e57530_MIAMILogo090110-175x50-c-center.jpg" alt="" />
             </div>
         </Section>
+        <Section hasImage title={sectionAbout.title} subtitle={sectionAbout.subtitle} description={sectionAbout.description}>
+            <ParallaxImage client:load />
+        </Section>
+
+        <Section hasImage={false} title={sectionPopular.title} subtitle={sectionPopular.subtitle} description={sectionPopular.description} />
     </main>
 </Layout>
+
+<style lang="scss">
+    .partners img {
+        filter: grayscale(100%);
+    }
+</style>

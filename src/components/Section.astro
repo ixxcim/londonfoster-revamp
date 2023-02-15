@@ -1,51 +1,115 @@
 ---
+import { ParallaxProvider } from 'react-scroll-parallax';
+
 export interface Props {
     title: string;
     subtitle: string;
     description: string;
+    hasImage: boolean;
 }
 
-const { title, subtitle, description } = Astro.props;
+const { title, subtitle, description, hasImage } = Astro.props;
 ---
 
-<section class="py-24">
-    <div class="container">
-        <div class="text-center mb-16">
-            <span class="section-subtitle uppercase mb-3">{subtitle}</span>
-            <h1 class="section-title mb-8">{title}</h1>
-            <p class="section-description">{description}</p>
-        </div>
-        <slot />
-    </div>
-</section>
+{
+    hasImage ? (
+        <section class="section-has-image">
+            <div class="grid grid-cols-2 items-center">
+                <div class="px-24">
+                    <span class="section-subtitle uppercase mb-3">{subtitle}</span>
+                    <h1 class="section-title mb-10">{title}</h1>
+                    <p class="section-description">{description}</p>
+                </div>
+                <div>
+                    <slot />
+                </div>
+            </div>
+        </section>
+    ) : (
+        <section class="py-24">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <span class="section-subtitle uppercase mb-3">{subtitle}</span>
+                    <h1 class="section-title mb-8">{title}</h1>
+                    <p class="section-description tracking-tight">{description}</p>
+                </div>
+                <slot />
+            </div>
+        </section>
+    )
+}
 
 <style lang="scss">
     @import '../scss/_variables';
 
-    .section-subtitle {
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 0.4em;
-        color: #a1acbd;
+    section:not(.section-has-image) {
+        .section-subtitle {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.4em;
+            color: #a1acbd;
+            // color: #e8aa14;
+        }
+
+        .section-title {
+            font-family: $font-family-secondary;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 52px;
+            // color: #062033;
+            color: #002243;
+        }
+
+        .section-description {
+            font-size: 22px;
+            line-height: 30px;
+            max-width: 700px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            color: #6d7888;
+            // color: #3d4856;
+        }
     }
 
-    .section-title {
-        font-family: $font-family-secondary;
-        font-weight: 700;
-        font-size: 48px;
-        line-height: 52px;
-        color: #062033;
-    }
+    .section-has-image {
+        background-color: #002243;
+        // background-color: #f7f7f7;
 
-    .section-description {
-        font-size: 22px;
-        line-height: 28px;
-        max-width: 700px;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        // color: #6d7888;
-        color: #3d4856;
+        .section-subtitle {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.025em;
+            color: #df9f1f;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 30px;
+                min-height: 2px;
+                background-color: rgba(#df9f1f, 0.5);
+                margin-right: 8px;
+            }
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 44px;
+            font-family: $font-family-secondary;
+            line-height: 58px;
+            max-width: 400px;
+            width: 100%;
+            color: #f1f1e6;
+        }
+
+        .section-description {
+            font-size: 20px;
+            line-height: 28px;
+            color: #f1f1e6;
+        }
     }
 </style>

@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-color: #fdfffc;
+    background-color: #fcfcfc;
 }
 
 .container {
@@ -17,7 +17,7 @@ body {
 }
 
 .btn {
-    background-color: $color-secondary;
+    background-color: transparent;
     color: $color-white;
     overflow: hidden;
     display: inline-flex;
@@ -40,7 +40,46 @@ body {
         cursor: pointer;
     }
 
-    &:not(.btn-link) {
+    &:focus {
+        outline: 0;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.65;
+    }
+
+    svg {
+        fill: currentColor;
+    }
+
+    &--primary {
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: darken($color-primary, 5%);
+            text-decoration: none;
+        }
+
+        &:focus {
+            background-color: lighten($color-primary, 5%);
+        }
+
+        &.disabled {
+            background-color: darken($color-primary, 10%);
+            color: $color-white;
+        }
+
+        &-outline {
+            border-color: $color-primary;
+            background-color: transparent;
+            color: $color-primary;
+        }
+    }
+
+    &--secondary {
+        background-color: $color-secondary;
+
         &:hover {
             background-color: darken($color-secondary, 5%);
             text-decoration: none;
@@ -54,18 +93,11 @@ body {
             background-color: darken($color-secondary, 10%);
             color: $color-white;
         }
-    }
 
-    &:focus {
-        outline: 0;
-    }
-
-    &.disabled {
-        pointer-events: none;
-        opacity: 0.65;
-    }
-
-    svg {
-        fill: currentColor;
+        &-outline {
+            border-color: $color-secondary;
+            background-color: transparent;
+            color: $color-secondary;
+        }
     }
 }
