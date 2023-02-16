@@ -30,7 +30,7 @@
             <div class="mb-20">
                 <h1 class="hero-title">Empowering Your Real <br /> Estate Experience</h1>
                 <p class="hero-description">London foster is the fastest growing, innovative real estate office in <br /> south florida.</p>
-                <button type="button" class="btn btn--secondary cta">Get Started</button>
+                <button type="button" class="btn btn--secondary uppercase tracking-wider cta">Get Started</button>
             </div>
             <ul class="flex mb-20">
                 <li class="achievement">
@@ -55,7 +55,7 @@
 </div>
 
 <style lang="scss">
-    @import '../scss/_variables';
+    @import '../styles/scss/_variables';
 
     .header-fixed {
         position: absolute;
@@ -83,8 +83,12 @@
 
         &,
         .btn {
-            font-size: 18px;
-            line-height: 22px;
+            // font-size: 18px;
+            // line-height: 22px;
+            font-size: 16px;
+            line-height: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .btn {
@@ -142,6 +146,10 @@
             line-height: 32px;
             margin-bottom: 40px;
         }
+    }
+
+    .btn.cta {
+        font-size: 18px;
     }
 
     .achievement {

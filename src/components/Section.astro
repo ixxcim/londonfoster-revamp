@@ -1,5 +1,5 @@
 ---
-import { ParallaxProvider } from 'react-scroll-parallax';
+import { container } from '../styles/style.css';
 
 export interface Props {
     title: string;
@@ -14,11 +14,13 @@ const { title, subtitle, description, hasImage } = Astro.props;
 {
     hasImage ? (
         <section class="section-has-image">
-            <div class="grid grid-cols-2 items-center">
-                <div class="px-24">
-                    <span class="section-subtitle uppercase mb-3">{subtitle}</span>
-                    <h1 class="section-title mb-10">{title}</h1>
-                    <p class="section-description">{description}</p>
+            <div class="grid grid-cols-2">
+                <div class:list={[container, 'flex items-center']}>
+                    <div class="px-24">
+                        <span class="section-subtitle uppercase mb-3">{subtitle}</span>
+                        <h1 class="section-title mb-10">{title}</h1>
+                        <p class="section-description">{description}</p>
+                    </div>
                 </div>
                 <div>
                     <slot />
@@ -31,7 +33,7 @@ const { title, subtitle, description, hasImage } = Astro.props;
                 <div class="text-center mb-16">
                     <span class="section-subtitle uppercase mb-3">{subtitle}</span>
                     <h1 class="section-title mb-8">{title}</h1>
-                    <p class="section-description tracking-tight">{description}</p>
+                    <p class="section-description">{description}</p>
                 </div>
                 <slot />
             </div>
@@ -40,7 +42,7 @@ const { title, subtitle, description, hasImage } = Astro.props;
 }
 
 <style lang="scss">
-    @import '../scss/_variables';
+    @import '../styles/scss/_variables';
 
     section:not(.section-has-image) {
         .section-subtitle {
@@ -68,14 +70,13 @@ const { title, subtitle, description, hasImage } = Astro.props;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
-            color: #6d7888;
+            color: #092c47;
             // color: #3d4856;
         }
     }
 
     .section-has-image {
-        background-color: #002243;
-        // background-color: #f7f7f7;
+        // background-color: #002243;
 
         .section-subtitle {
             display: flex;
