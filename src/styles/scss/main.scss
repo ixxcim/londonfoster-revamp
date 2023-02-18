@@ -78,26 +78,26 @@ body {
     }
 
     &--secondary {
-        background-color: $color-secondary;
+        background-color: #ffaa5a;
 
         &:hover {
-            background-color: darken($color-secondary, 5%);
+            background-color: darken(#ffaa5a, 5%);
             text-decoration: none;
         }
 
         &:focus {
-            background-color: lighten($color-secondary, 5%);
+            background-color: lighten(#ffaa5a, 5%);
         }
 
         &.disabled {
-            background-color: darken($color-secondary, 10%);
+            background-color: darken(#ffaa5a, 10%);
             color: $color-white;
         }
 
         &-outline {
-            border-color: $color-secondary;
+            border-color: #ffaa5a;
             background-color: transparent;
-            color: $color-secondary;
+            color: #ffaa5a;
         }
     }
 }

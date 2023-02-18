@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import ParallaxImage from '../components/ParallaxImage.jsx';
 
+import { ImageGrid } from '../styles/style.css';
+
 const sectionPartners = {
     title: 'Our Partnership',
     subtitle: 'Partnership',
@@ -24,21 +26,44 @@ const sectionPopular = {
 
 <Layout title="Home">
     <main>
-        <Section hasImage={false} title={sectionPartners.title} subtitle={sectionPartners.subtitle} description={sectionPartners.description}>
+        <!-- will use if needed -->
+        <!-- <Section hasImage={false} title={sectionPartners.title} subtitle={sectionPartners.subtitle} description={sectionPartners.description}>
             <div class="partners flex items-center justify-between mb-20">
-                <img src="https://londonfoster.com/wp-content/uploads/2017/03/logo200h-175x50-c-center.png" alt="" />
-                <img src="https://londonfoster.com/wp-content/uploads/2017/03/rasm_logo-175x50-c-center.jpg" alt="" />
-                <img src="https://londonfoster.com/wp-content/uploads/2017/03/realtors-association-logo-lo-res-7-09-rgb-175x50-c-center.jpg" alt="" />
-                <img src="https://londonfoster.com/wp-content/uploads/2017/03/1c84eb0b-5494-4452-ba72-979b95d3ea38BROWARD-Council-LOGO-for-website-175x50-c-center.jpg" alt="" />
-                <img src="https://londonfoster.com/wp-content/uploads/2016/04/new1-175x50-c-center.png" alt="" />
-                <img src="https://londonfoster.com/wp-content/uploads/2016/04/28e938cf-b00e-4178-9821-b7f8ee6e57530_MIAMILogo090110-175x50-c-center.jpg" alt="" />
+                <img src="https://londonfoster.com/wp-content/uploads/2017/03/logo200h-175x50-c-center.png" />
+                <img src="https://londonfoster.com/wp-content/uploads/2017/03/rasm_logo-175x50-c-center.jpg" />
+                <img src="https://londonfoster.com/wp-content/uploads/2017/03/realtors-association-logo-lo-res-7-09-rgb-175x50-c-center.jpg" />
+                <img src="https://londonfoster.com/wp-content/uploads/2017/03/1c84eb0b-5494-4452-ba72-979b95d3ea38BROWARD-Council-LOGO-for-website-175x50-c-center.jpg" />
+                <img src="https://londonfoster.com/wp-content/uploads/2016/04/new1-175x50-c-center.png" />
+                <img src="https://londonfoster.com/wp-content/uploads/2016/04/28e938cf-b00e-4178-9821-b7f8ee6e57530_MIAMILogo090110-175x50-c-center.jpg" />
             </div>
-        </Section>
+        </Section> -->
+
         <Section hasImage title={sectionAbout.title} subtitle={sectionAbout.subtitle} description={sectionAbout.description}>
-            <ParallaxImage client:load />
+            <div class:list={[ImageGrid]}>
+                <!-- <img class="absolute -top-[50px] right-[55px] z-100 w-[200px] h-[250px] object-cover object-center" src="https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+                    <img class="relative z-200 m-auto object-cover object-center w-[380px] h-[500px]" src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+                    <img class="absolute -bottom-[50px] left-[70px] z-300 w-[200px] h-[250px] object-cover object-center" src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /> -->
+
+                <div class="overflow-hidden row-span-2">
+                    <img class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+                </div>
+                <div class="overflow-hidden">
+                    <img class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+                </div>
+                <div class="overflow-hidden row-span-2">
+                    <img class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+                </div>
+                <div class="overflow-hidden">
+                    <img class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/3034343/pexels-photo-3034343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+                </div>
+            </div>
+
+            <!-- will use if needed -->
+            <!-- <ParallaxImage client:load /> -->
         </Section>
 
-        <Section hasImage={false} title={sectionPopular.title} subtitle={sectionPopular.subtitle} description={sectionPopular.description} />
+        <!-- will use if needed -->
+        <!-- <Section hasImage={false} title={sectionPopular.title} subtitle={sectionPopular.subtitle} description={sectionPopular.description} /> -->
     </main>
 </Layout>
 

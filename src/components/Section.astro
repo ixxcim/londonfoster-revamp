@@ -1,6 +1,4 @@
 ---
-import { container } from '../styles/style.css';
-
 export interface Props {
     title: string;
     subtitle: string;
@@ -13,17 +11,19 @@ const { title, subtitle, description, hasImage } = Astro.props;
 
 {
     hasImage ? (
-        <section class="section-has-image">
-            <div class="grid grid-cols-2">
-                <div class:list={[container, 'flex items-center']}>
-                    <div class="px-24">
-                        <span class="section-subtitle uppercase mb-3">{subtitle}</span>
-                        <h1 class="section-title mb-10">{title}</h1>
-                        <p class="section-description">{description}</p>
+        <section class="section-has-image py-20">
+            <div class="container">
+                <div class="grid grid-cols-2 gap-x-24">
+                    <div class="flex items-center">
+                        <div>
+                            <span class="section-subtitle uppercase mb-3">{subtitle}</span>
+                            <h1 class="section-title mb-10">{title}</h1>
+                            <p class="section-description">{description}</p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <slot />
+                    <div>
+                        <slot />
+                    </div>
                 </div>
             </div>
         </section>
@@ -85,14 +85,14 @@ const { title, subtitle, description, hasImage } = Astro.props;
             font-size: 16px;
             line-height: 20px;
             letter-spacing: 0.025em;
-            color: #df9f1f;
+            color: #c18500;
 
             &:before {
                 content: '';
                 display: block;
                 width: 30px;
                 min-height: 2px;
-                background-color: rgba(#df9f1f, 0.5);
+                background-color: rgba(#c18500, 0.5);
                 margin-right: 8px;
             }
         }
@@ -104,13 +104,17 @@ const { title, subtitle, description, hasImage } = Astro.props;
             line-height: 58px;
             max-width: 400px;
             width: 100%;
-            color: #f1f1e6;
+            // color: #f1f1e6;
+
+            color: #011627;
         }
 
         .section-description {
             font-size: 20px;
             line-height: 28px;
-            color: #f1f1e6;
+            // color: #f1f1e6;
+
+            color: #2f4858;
         }
     }
 </style>
